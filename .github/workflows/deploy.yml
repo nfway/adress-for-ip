@@ -39,4 +39,4 @@ jobs:
         with:
           project: "adress"
           entrypoint: "https://deno.land/std@0.224.0/http/file_server.ts"
-          root: ".next/server/app/"
+          root: ".next/server/app"
