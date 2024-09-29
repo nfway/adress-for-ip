@@ -38,5 +38,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "adress"
-          entrypoint: "next.config.mjs"
+          entrypoint: ""
           root: "/.next/server/app/"
