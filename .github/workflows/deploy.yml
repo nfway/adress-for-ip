@@ -38,5 +38,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "adress"
-          entrypoint: ""
+          entrypoint: "https://deno.land/std@0.140.0/http/server.ts"
           root: "/.next/server/app/"
