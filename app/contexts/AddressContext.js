@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useState, useContext, useCallback, useEffect } from 'react';
+import { ADDRESS_FIELDS } from 'app/constants/addressFields';
 
 const AddressContext = createContext();
 
@@ -42,7 +43,7 @@ export function AddressProvider({ children }) {
     // 保存为 TXT 文件
     const saveToTxtFile = useCallback(() => {
         const content = savedAddresses.map(addr =>
-            `${addr.lastName},${addr.firstName},${addr.address},${addr.city},${addr.state},${addr.zipCode},${addr.country},${addr.phone}`
+            ADDRESS_FIELDS.map(field => addr[field]).join(',')
         ).join('\n');
         const blob = new Blob([content], { type: 'text/plain' });
         const url = URL.createObjectURL(blob);
